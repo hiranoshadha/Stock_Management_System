@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-tables" author="admin">
+        <createTable tableName="feedback" schemaName="stock_manage">
+            <column name="feedbackid" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(45)"/>
+            <column name="email" type="VARCHAR(45)"/>
+            <column name="subject" type="VARCHAR(45)"/>
+            <column name="message" type="VARCHAR(80)"/>
+            <column name="status" type="VARCHAR(45)"/>
+        </createTable>
+
+        <createTable tableName="product" schemaName="stock_manage">
+            <column name="productid" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(45)"/>
+            <column name="category" type="VARCHAR(45)"/>
+            <column name="description" type="VARCHAR(45)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="image" type="LONGBLOB"/>
+            <column name="stock" type="INT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
